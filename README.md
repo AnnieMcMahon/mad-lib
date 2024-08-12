@@ -9,4 +9,4 @@ This app generates a Mad Lib sentence using words chosen by the user or generate
 * Vite
 * Vercel
 
-Web page: [https://vercel.com/anniemcmahons-projects/mad-lib](https://vercel.com/anniemcmahons-projects/mad-lib).
+Web page: [https://mad-lib-nine.vercel.app/](https://mad-lib-nine.vercel.app/).
