@@ -21,7 +21,7 @@ const Form: React.FC = () => {
   });
 
   const [sentence, setSentence] = useState(
-    "Choose words from the list or type your own"
+    "Choose words from the list or type your own, then click on Generate MadLib"
   );
 
   const madLibGenerator = (
@@ -57,7 +57,7 @@ const Form: React.FC = () => {
       verbChoice: "",
       adverbChoice: "",
     });
-    setSentence("Choose words from the list or type your own");
+    setSentence("Choose words from the list or type your own, then click on Generate MadLib");
   };
 
   const handleRandom = () => {
@@ -149,10 +149,12 @@ const Form: React.FC = () => {
           </datalist>
         </div>
       </form>
-      <p id="sentence">{sentence}</p>
+      <p>{sentence}</p>
+      <div id="button-section">
       <button onClick={handleRandom}>Surprise me!</button>
       <button onClick={handleSubmit}>Generate MadLib</button>
       <button onClick={handleReset}>Reset</button>
+      </div>
     </>
   );
 };
