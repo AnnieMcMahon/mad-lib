@@ -60,15 +60,31 @@ button:hover {
 }
 
 /* Medium screens */
-@media screen and (max-width: 900px) and (min-width: 480px) {
+@media screen and (max-width: 900px) and (min-width: 540px) {
   button {
     font-size: 1.2rem;
     width: 12rem;
   }
 }
 
+/* Surface Duo */
+@media screen and (max-width: 540px) and (min-width: 480px) {
+  button {
+    font-size: 0.8rem;
+    width: 8rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+}
+
 /* Small screens */
 @media screen and (max-width: 480px) {
+  input {
+    width: 15rem;
+    }
+
   p {
     font-size: 1.5rem;
   }
