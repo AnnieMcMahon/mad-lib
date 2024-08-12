@@ -11,6 +11,7 @@ const adjectives = ["gross", "awesome", "joyful", "sympathetic", "arrogant"];
 const nouns = ["boyfriend", "baby", "chameleon", "turtle", "grandmother"];
 const verbs = ["running", "playing", "spinning around", "sobbing", "giggling"];
 const adverbs = ["willingly", "wildly", "constantly", "stupidly", "lazily"];
+const instructions = "Choose words from the list or type your own, then click on Generate MadLib";
 
 const Form: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -20,9 +21,7 @@ const Form: React.FC = () => {
     adverbChoice: "",
   });
 
-  const [sentence, setSentence] = useState(
-    "Choose words from the list or type your own, then click on Generate MadLib"
-  );
+  const [sentence, setSentence] = useState(instructions);
 
   const madLibGenerator = (
     adjective: string,
@@ -57,11 +56,12 @@ const Form: React.FC = () => {
       verbChoice: "",
       adverbChoice: "",
     });
-    setSentence("Choose words from the list or type your own, then click on Generate MadLib");
+    setSentence(instructions);
   };
 
   const handleRandom = () => {
-    const randomAdjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+    const randomAdjective =
+      adjectives[Math.floor(Math.random() * adjectives.length)];
     const randomNoun = nouns[Math.floor(Math.random() * nouns.length)];
     const randomVerb = verbs[Math.floor(Math.random() * verbs.length)];
     const randomAdverb = adverbs[Math.floor(Math.random() * adverbs.length)];
@@ -74,12 +74,7 @@ const Form: React.FC = () => {
     });
 
     setSentence(
-      madLibGenerator(
-        randomAdjective,
-        randomNoun,
-        randomVerb,
-        randomAdverb
-      )
+      madLibGenerator(randomAdjective, randomNoun, randomVerb, randomAdverb)
     );
   };
 
@@ -151,9 +146,9 @@ const Form: React.FC = () => {
       </form>
       <p>{sentence}</p>
       <div id="button-section">
-      <button onClick={handleRandom}>Surprise me!</button>
-      <button onClick={handleSubmit}>Generate MadLib</button>
-      <button onClick={handleReset}>Reset</button>
+        <button onClick={handleRandom}>Surprise me!</button>
+        <button onClick={handleSubmit}>Generate MadLib</button>
+        <button onClick={handleReset}>Reset</button>
       </div>
     </>
   );

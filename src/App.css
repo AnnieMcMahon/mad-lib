@@ -1,8 +1,3 @@
-body {
-  display: flex;
-  justify-content: center;
-}
-
 h1 {
   text-align: center;
   margin: 1rem;
@@ -13,18 +8,31 @@ h1 {
 #content {
   display: flexbox;
   padding: 2rem;
-  background: linear-gradient(-45deg, #ff8489, #d5adc8); 
+  background: linear-gradient(-45deg, #d3686b, #f1cee4); 
   margin: auto;
   border: 2px solid rgb(148, 9, 78);
-  border-radius: 3%;
 }
+
+form {
+  width: 20rem;
+  margin: auto;
+  }
+  
+  label, input {
+  font-size: 1.2rem;
+  display: block;
+  }
+  
+  input {
+  width: 20rem;
+  }
 
 p {
   text-align: center;
   font-size: 2rem;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   margin: 20px auto;
-  width: 50rem;
+  max-width: 50rem;
   height: 6rem;
 }
 
@@ -43,7 +51,7 @@ button {
   border: 2px solid rgb(148, 9, 78);
   box-shadow: -5px 5px rgb(109, 16, 16);
   color: white;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   margin: 0 0.5rem;
 }
 
@@ -51,16 +59,22 @@ button:hover {
   background-color: rgb(212, 124, 138);
 }
 
-form {
-width: 20rem;
-margin: auto;
+/* Medium screens */
+@media screen and (max-width: 900px) and (min-width: 480px) {
+  button {
+    font-size: 1.2rem;
+    width: 12rem;
+  }
 }
 
-label, input {
-font-size: 1.2rem;
-display: block;
-}
+/* Small screens */
+@media screen and (max-width: 480px) {
+  p {
+    font-size: 1.5rem;
+  }
+  
+  button {
+    margin: 0.5rem 0;
+  }
 
-input {
-width: 20rem;
 }
