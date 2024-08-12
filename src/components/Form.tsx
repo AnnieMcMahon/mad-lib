@@ -28,7 +28,9 @@ const Form: React.FC = () => {
     noun: string,
     verb: string,
     adverb: string
-  ) => "My " + adjective + " " + noun + " is " + verb + " " + adverb + ".";
+  ) => {
+    return adjective && noun && verb && adverb ? "My " + adjective + " " + noun + " is " + verb + " " + adverb + "." : "Please choose a word in each category before submitting.";
+  }
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
