@@ -149,9 +149,9 @@ const Sentence: React.FC = () => {
       </form>
       <p id="sentence">{sentence}</p>
       <div className="button-section">
-        <button onClick={handleRandom}>Surprise me!</button>
-        <button onClick={handleSubmit}>Generate MadLib</button>
+        <button className="generate" onClick={handleSubmit}>Generate MadLib</button>
         <button onClick={handleReset}>Reset</button>
+        <button onClick={handleRandom}>Surprise me!</button>
       </div>
     </>
   );
