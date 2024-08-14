@@ -18,12 +18,12 @@ const actions = [
   "sobbing",
   "giggling",
 ];
-const landForms = ["mountain", "valley", "desert", "hill", "rain forest"];
-const adjectives = ["gross", "awesome", "joyful", "sympathetic", "arrogant"];
-const colors = ["pink", "orange", "purple", "white", "green"];
-const verbs = ["giggle", "shiver", "hiccup", "yawn", "dash"];
-const liquids = ["lime juice", "coolant", "oil", "blood", "milk"];
-const animals = ["ant", "tiger", "koala bear", "salamander", "shark"];
+const landForms = ["mountain", "valley", "desert", "hill", "rain forest", "gutters"];
+const adjectives = ["gross", "awesome", "joyful", "sympathetic", "arrogant", "beautiful", "chubby"];
+const colors = ["pink", "orange", "purple", "white", "green", "maroon"];
+const verbs = ["giggle", "shiver", "hiccup", "yawn", "dash", "spin around"];
+const liquids = ["lime juice", "coolant", "oil", "blood", "milk", "beer"];
+const animals = ["ant", "tiger", "koala bear", "salamander", "shark", "baby dinosaur"];
 
 const instructions =
   "Choose words from the list or type your own, then click on Generate MadLib";
@@ -63,11 +63,11 @@ const Paragraph: React.FC = () => {
       adjective2 &&
       color2 &&
       animal
-      ? "I once met a witch when I was " +
+      ? "I met a witch when I was " +
           action +
           " in the " +
           landForm +
-          ". She was very " +
+          ". She was extremely " +
           adjective +
           " and her eyes were so " +
           color +
@@ -81,7 +81,7 @@ const Paragraph: React.FC = () => {
           color2 +
           " " +
           animal +
-          "!!"
+          "!"
       : "Please choose a word in each category before submitting.";
   };
 
