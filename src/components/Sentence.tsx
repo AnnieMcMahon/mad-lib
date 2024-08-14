@@ -13,7 +13,7 @@ const verbs = ["running", "playing", "spinning around", "sobbing", "giggling"];
 const adverbs = ["willingly", "wildly", "constantly", "stupidly", "lazily"];
 const instructions = "Choose words from the list or type your own, then click on Generate MadLib";
 
-const Form: React.FC = () => {
+const Sentence: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     adjectiveChoice: "",
     nounChoice: "",
@@ -83,6 +83,7 @@ const Form: React.FC = () => {
   return (
     <>
       <form>
+      <h2>One-Sentence Story</h2>
         <div>
           <label htmlFor="adjective-choice">Adjective:</label>
           <input
@@ -146,8 +147,8 @@ const Form: React.FC = () => {
           </datalist>
         </div>
       </form>
-      <p>{sentence}</p>
-      <div id="button-section">
+      <p id="sentence">{sentence}</p>
+      <div className="button-section">
         <button onClick={handleRandom}>Surprise me!</button>
         <button onClick={handleSubmit}>Generate MadLib</button>
         <button onClick={handleReset}>Reset</button>
@@ -156,4 +157,4 @@ const Form: React.FC = () => {
   );
 };
 
-export default Form;
+export default Sentence;
