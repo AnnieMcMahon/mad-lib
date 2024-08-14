@@ -170,7 +170,7 @@ const Paragraph: React.FC = () => {
       <form>
         <h2>One-Paragraph Story</h2>
         <div>
-          <label htmlFor="action-choice">Action (example: dancing):</label>
+          <label htmlFor="action-choice">Action (-ing):</label>
           <input
             list="actions"
             id="action-choice"
@@ -185,7 +185,7 @@ const Paragraph: React.FC = () => {
           </datalist>
         </div>
         <div>
-          <label htmlFor="landForm-choice">Land Form (example: hill):</label>
+          <label htmlFor="landForm-choice">Land Form:</label>
           <input
             list="landForms"
             id="landForm-choice"
@@ -200,7 +200,7 @@ const Paragraph: React.FC = () => {
           </datalist>
         </div>
         <div>
-          <label htmlFor="adjective-choice">Adjective (example: ugly):</label>
+          <label htmlFor="adjective-choice">Adjective:</label>
           <input
             list="adjectives"
             id="adjective-choice"
@@ -215,7 +215,7 @@ const Paragraph: React.FC = () => {
           </datalist>
         </div>
         <div>
-          <label htmlFor="color-choice">Color (example: red):</label>
+          <label htmlFor="color-choice">Color:</label>
           <input
             list="colors"
             id="color-choice"
@@ -245,7 +245,7 @@ const Paragraph: React.FC = () => {
           </datalist>
         </div>
         <div>
-          <label htmlFor="liquid-choice">Liquid (example: milk):</label>
+          <label htmlFor="liquid-choice">Liquid:</label>
           <input
             list="liquids"
             id="liquid-choice"
@@ -260,7 +260,7 @@ const Paragraph: React.FC = () => {
           </datalist>
         </div>
         <div>
-          <label htmlFor="adjective2-choice">Adjective (example: small):</label>
+          <label htmlFor="adjective2-choice">Adjective:</label>
           <input
             list="adjectives2"
             id="adjective2-choice"
@@ -275,7 +275,7 @@ const Paragraph: React.FC = () => {
           </datalist>
         </div>
         <div>
-          <label htmlFor="color2-choice">Color (example: blue):</label>
+          <label htmlFor="color2-choice">Color:</label>
           <input
             list="colors2"
             id="color2-choice"
@@ -290,7 +290,7 @@ const Paragraph: React.FC = () => {
           </datalist>
         </div>
         <div>
-          <label htmlFor="animal-choice">Animal (example: kangaroo):</label>
+          <label htmlFor="animal-choice">Animal:</label>
           <input
             list="animals"
             id="animal-choice"
@@ -308,8 +308,8 @@ const Paragraph: React.FC = () => {
       <p id="paragraph">{paragraph}</p>
       <div className="button-section">
         <button className="generate" onClick={handleSubmit}>Generate MadLib</button>
-        <button onClick={handleReset}>Reset</button>
         <button onClick={handleRandom}>Surprise me!</button>
+        <button onClick={handleReset}>Reset</button>
       </div>
     </>
   );

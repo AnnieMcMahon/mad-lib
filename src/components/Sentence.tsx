@@ -3,13 +3,13 @@ import { useState, ChangeEvent } from "react";
 interface FormData {
   adjectiveChoice: string;
   nounChoice: string;
-  verbChoice: string;
+  actionChoice: string;
   adverbChoice: string;
 }
 
 const adjectives = ["gross", "awesome", "joyful", "sympathetic", "arrogant"];
 const nouns = ["boyfriend", "baby", "chameleon", "turtle", "grandmother"];
-const verbs = ["running", "playing", "spinning around", "sobbing", "giggling"];
+const actions = ["running", "playing", "spinning around", "sobbing", "giggling"];
 const adverbs = ["willingly", "wildly", "constantly", "stupidly", "lazily"];
 const instructions = "Choose words from the list or type your own, then click on Generate MadLib";
 
@@ -17,7 +17,7 @@ const Sentence: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     adjectiveChoice: "",
     nounChoice: "",
-    verbChoice: "",
+    actionChoice: "",
     adverbChoice: "",
   });
 
@@ -26,10 +26,10 @@ const Sentence: React.FC = () => {
   const madLibGenerator = (
     adjective: string,
     noun: string,
-    verb: string,
+    action: string,
     adverb: string
   ) => {
-    return adjective && noun && verb && adverb ? "My " + adjective + " " + noun + " is " + verb + " " + adverb + "." : "Please choose a word in each category before submitting.";
+    return adjective && noun && action && adverb ? "My " + adjective + " " + noun + " is " + action + " " + adverb + "." : "Please choose a word in each category before submitting.";
   }
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -45,7 +45,7 @@ const Sentence: React.FC = () => {
       madLibGenerator(
         formData.adjectiveChoice,
         formData.nounChoice,
-        formData.verbChoice,
+        formData.actionChoice,
         formData.adverbChoice
       )
     );
@@ -55,7 +55,7 @@ const Sentence: React.FC = () => {
     setFormData({
       adjectiveChoice: "",
       nounChoice: "",
-      verbChoice: "",
+      actionChoice: "",
       adverbChoice: "",
     });
     setSentence(instructions);
@@ -65,18 +65,18 @@ const Sentence: React.FC = () => {
     const randomAdjective =
       adjectives[Math.floor(Math.random() * adjectives.length)];
     const randomNoun = nouns[Math.floor(Math.random() * nouns.length)];
-    const randomVerb = verbs[Math.floor(Math.random() * verbs.length)];
+    const randomAction = actions[Math.floor(Math.random() * actions.length)];
     const randomAdverb = adverbs[Math.floor(Math.random() * adverbs.length)];
 
     setFormData({
       adjectiveChoice: randomAdjective,
       nounChoice: randomNoun,
-      verbChoice: randomVerb,
+      actionChoice: randomAction,
       adverbChoice: randomAdverb,
     });
 
     setSentence(
-      madLibGenerator(randomAdjective, randomNoun, randomVerb, randomAdverb)
+      madLibGenerator(randomAdjective, randomNoun, randomAction, randomAdverb)
     );
   };
 
@@ -116,23 +116,23 @@ const Sentence: React.FC = () => {
         </div>
 
         <div>
-          <label htmlFor="verb-choice">Verb:</label>
+          <label htmlFor="action-choice">Action (-ing):</label>
           <input
-            list="verbs"
-            id="verb-choice"
-            name="verbChoice"
-            value={formData.verbChoice}
+            list="actions"
+            id="action-choice"
+            name="actionChoice"
+            value={formData.actionChoice}
             onChange={handleChange}
           />
-          <datalist id="verbs">
-            {verbs.map((verb) => (
-              <option value={verb} key={verb} />
+          <datalist id="actions">
+            {actions.map((action) => (
+              <option value={action} key={action} />
             ))}
           </datalist>
         </div>
 
         <div>
-          <label htmlFor="adverb-choice">Adverb:</label>
+          <label htmlFor="adverb-choice">Adverb (-ly):</label>
           <input
             list="adverbs"
             id="adverb-choice"
@@ -150,8 +150,8 @@ const Sentence: React.FC = () => {
       <p id="sentence">{sentence}</p>
       <div className="button-section">
         <button className="generate" onClick={handleSubmit}>Generate MadLib</button>
-        <button onClick={handleReset}>Reset</button>
         <button onClick={handleRandom}>Surprise me!</button>
+        <button onClick={handleReset}>Reset</button>
       </div>
     </>
   );
