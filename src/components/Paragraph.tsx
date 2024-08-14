@@ -64,23 +64,23 @@ const Paragraph: React.FC = () => {
       color2 &&
       animal
       ? "I met a witch when I was " +
-          action +
+          action.toLowerCase() +
           " in the " +
-          landForm +
+          landForm.toLowerCase() +
           ". She was extremely " +
-          adjective +
+          adjective.toLowerCase() +
           " and her eyes were so " +
-          color +
+          color.toLowerCase() +
           " it made me " +
-          verb +
+          verb.toLowerCase() +
           ". She gave me " +
-          liquid +
+          liquid.toLowerCase() +
           " to drink and I immediately turned into a " +
-          adjective2 +
+          adjective2.toLowerCase() +
           " " +
-          color2 +
+          color2.toLowerCase() +
           " " +
-          animal +
+          animal.toLowerCase() +
           "!"
       : "Please choose a word in each category before submitting.";
   };

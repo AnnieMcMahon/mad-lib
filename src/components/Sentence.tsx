@@ -29,7 +29,7 @@ const Sentence: React.FC = () => {
     action: string,
     adverb: string
   ) => {
-    return adjective && noun && action && adverb ? "My " + adjective + " " + noun + " is " + action + " " + adverb + "." : "Please choose a word in each category before submitting.";
+    return adjective && noun && action && adverb ? "My " + adjective.toLowerCase() + " " + noun.toLowerCase() + " is " + action.toLowerCase() + " " + adverb.toLowerCase() + "." : "Please choose a word in each category before submitting.";
   }
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
