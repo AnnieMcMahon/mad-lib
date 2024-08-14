@@ -35,14 +35,6 @@ p {
   max-width: 50rem;
 }
 
-#sentence {
-  height: 6rem;
-}
-
-#paragraph {
-  height: 10rem;
-}
-
 .button-section {
   margin: auto;
   text-align: center;
