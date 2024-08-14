@@ -9,9 +9,16 @@ interface FormData {
 
 const adjectives = ["gross", "awesome", "joyful", "sympathetic", "arrogant"];
 const nouns = ["boyfriend", "baby", "chameleon", "turtle", "grandmother"];
-const actions = ["running", "playing", "spinning around", "sobbing", "giggling"];
+const actions = [
+  "running",
+  "playing",
+  "spinning around",
+  "sobbing",
+  "giggling",
+];
 const adverbs = ["willingly", "wildly", "constantly", "stupidly", "lazily"];
-const instructions = "Choose words from the list or type your own, then click on Generate MadLib";
+const instructions =
+  "Choose words from the list or type your own, then click on Generate MadLib";
 
 const Sentence: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -21,7 +28,7 @@ const Sentence: React.FC = () => {
     adverbChoice: "",
   });
 
-  const [sentence, setSentence] = useState(instructions);
+  const [sentence, setSentence] = useState("");
 
   const madLibGenerator = (
     adjective: string,
@@ -29,8 +36,18 @@ const Sentence: React.FC = () => {
     action: string,
     adverb: string
   ) => {
-    return adjective && noun && action && adverb ? "My " + adjective.toLowerCase() + " " + noun.toLowerCase() + " is " + action.toLowerCase() + " " + adverb.toLowerCase() + "." : "Please choose a word in each category before submitting.";
-  }
+    return adjective && noun && action && adverb
+      ? "My " +
+          adjective.toLowerCase() +
+          " " +
+          noun.toLowerCase() +
+          " is " +
+          action.toLowerCase() +
+          " " +
+          adverb.toLowerCase() +
+          "."
+      : "Please choose a word in each category before submitting.";
+  };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -58,7 +75,7 @@ const Sentence: React.FC = () => {
       actionChoice: "",
       adverbChoice: "",
     });
-    setSentence(instructions);
+    setSentence("");
   };
 
   const handleRandom = () => {
@@ -82,8 +99,9 @@ const Sentence: React.FC = () => {
 
   return (
     <>
-      <form>
       <h2>One-Sentence Story</h2>
+      <p>{instructions}</p>
+      <form>
         <div>
           <label htmlFor="adjective-choice">Adjective:</label>
           <input
@@ -147,9 +165,11 @@ const Sentence: React.FC = () => {
           </datalist>
         </div>
       </form>
-      <p id="sentence">{sentence}</p>
+      <p>{sentence}</p>
       <div className="button-section">
-        <button className="generate" onClick={handleSubmit}>Generate MadLib</button>
+        <button className="generate" onClick={handleSubmit}>
+          Generate MadLib
+        </button>
         <button onClick={handleRandom}>Surprise me!</button>
         <button onClick={handleReset}>Reset</button>
       </div>

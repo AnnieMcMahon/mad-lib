@@ -5,6 +5,12 @@ h1 {
   font-size: 3rem;
 }
 
+h2 {
+  text-align: center;
+  margin: 1rem;
+  font-size: 1.5rem;
+}
+
 #content {
   display: flexbox;
   padding: 2rem;
@@ -15,7 +21,7 @@ h1 {
 
 form {
   width: 20rem;
-  margin: auto;
+  margin: 1rem auto;
   }
   
   label, input {

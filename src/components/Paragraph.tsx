@@ -18,12 +18,34 @@ const actions = [
   "sobbing",
   "giggling",
 ];
-const landForms = ["mountain", "valley", "desert", "hill", "rain forest", "gutters"];
-const adjectives = ["gross", "awesome", "joyful", "sympathetic", "arrogant", "beautiful", "chubby"];
+const landForms = [
+  "mountain",
+  "valley",
+  "desert",
+  "hill",
+  "rain forest",
+  "gutters",
+];
+const adjectives = [
+  "gross",
+  "awesome",
+  "joyful",
+  "sympathetic",
+  "arrogant",
+  "beautiful",
+  "chubby",
+];
 const colors = ["pink", "orange", "purple", "white", "green", "maroon"];
 const verbs = ["giggle", "shiver", "hiccup", "yawn", "dash", "spin around"];
 const liquids = ["lime juice", "coolant", "oil", "blood", "milk", "beer"];
-const animals = ["ant", "tiger", "koala bear", "salamander", "shark", "baby dinosaur"];
+const animals = [
+  "ant",
+  "tiger",
+  "koala bear",
+  "salamander",
+  "shark",
+  "baby dinosaur",
+];
 
 const instructions =
   "Choose words from the list or type your own, then click on Generate MadLib";
@@ -41,7 +63,7 @@ const Paragraph: React.FC = () => {
     animalChoice: "",
   });
 
-  const [paragraph, setParagraph] = useState(instructions);
+  const [paragraph, setParagraph] = useState("");
 
   const madLibGenerator = (
     action: string,
@@ -121,7 +143,7 @@ const Paragraph: React.FC = () => {
       color2Choice: "",
       animalChoice: "",
     });
-    setParagraph(instructions);
+    setParagraph("");
   };
 
   const handleRandom = () => {
@@ -167,8 +189,9 @@ const Paragraph: React.FC = () => {
 
   return (
     <>
+      <h2>One-Paragraph Story</h2>
+      <p>{instructions}</p>
       <form>
-        <h2>One-Paragraph Story</h2>
         <div>
           <label htmlFor="action-choice">Action (-ing):</label>
           <input
@@ -305,14 +328,15 @@ const Paragraph: React.FC = () => {
           </datalist>
         </div>
       </form>
-      <p id="paragraph">{paragraph}</p>
+      <p>{paragraph}</p>
       <div className="button-section">
-        <button className="generate" onClick={handleSubmit}>Generate MadLib</button>
+        <button className="generate" onClick={handleSubmit}>
+          Generate MadLib
+        </button>
         <button onClick={handleRandom}>Surprise me!</button>
         <button onClick={handleReset}>Reset</button>
       </div>
     </>
   );
 };
-
 export default Paragraph;
