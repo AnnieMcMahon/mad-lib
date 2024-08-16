@@ -1,28 +1,28 @@
 import Header from "./components/Header";
-import Sentence from "./components/Sentence"
-import Paragraph from "./components/Paragraph";
+import Witch from "./components/Witch";
+import Zoo from "./components/Zoo";
 import { useState } from "react";
 
 const App: React.FC = () => {
 
   const [story, setStory] = useState("Sentence");
 
-  const handleSentence = () => {
-    setStory("Sentence")
+  const handleWitch = () => {
+    setStory("Witch")
   };
 
-  const handleParagraph = () => {
-    setStory("Paragraph")
+  const handleZoo = () => {
+    setStory("Zoo")
   };
 
   return (
       <div id="content">
         <Header /> 
         <div className="button-section">
-        <button className="story-button" onClick={handleSentence}>Sentence</button>
-        <button className="story-button" onClick={handleParagraph}>Paragraph</button>
+        <button className="story-button" onClick={handleWitch}>Witch</button>
+        <button className="story-button" onClick={handleZoo}>Zoo</button>
       </div>  
-      {story == "Paragraph" ? <Paragraph /> : <Sentence />}
+      {story == "Zoo" ? <Zoo /> : <Witch />}
       </div>
   );
 };

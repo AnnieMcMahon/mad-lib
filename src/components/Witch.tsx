@@ -50,7 +50,7 @@ const animals = [
 const instructions =
   "Choose words from the list or type your own, then click on Generate MadLib";
 
-const Paragraph: React.FC = () => {
+const Witch: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     actionChoice: "",
     landFormChoice: "",
@@ -189,7 +189,7 @@ const Paragraph: React.FC = () => {
 
   return (
     <>
-      <h2>One-Paragraph Story</h2>
+      <h2>Witch Story</h2>
       <p>{instructions}</p>
       <form>
         <div>
@@ -339,4 +339,4 @@ const Paragraph: React.FC = () => {
     </>
   );
 };
-export default Paragraph;
+export default Witch;
